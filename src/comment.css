@@ -1,0 +1,22 @@
+.comment-container{
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    height:0%;
+    background-color: red;
+    overflow: hidden;
+}
+
+.comment-container form{
+    position:absolute;
+    bottom: 10px;
+    width: 90%;
+    left: 5%;
+}
+
+.comment-container form input{
+    width: 100%;
+    padding: 0.7rem;
+    border: none;
+    background:rgba(0,0,0,0.5);
+}   
