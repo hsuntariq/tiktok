@@ -1,22 +1,47 @@
-.comment-container{
+.container-comment{
     position: absolute;
-    bottom:0;
+    bottom: 4px;
+    border-radius: 10px;
     width: 100%;
-    height:0%;
-    background-color: red;
+    height: 50%;
+    background-color:rgba(0,0,0,0.7);
+    height: 0px;
     overflow: hidden;
+    transition: all 0.5s;
 }
 
-.comment-container form{
-    position:absolute;
-    bottom: 10px;
-    width: 90%;
-    left: 5%;
-}
-
-.comment-container form input{
+.container-comment form{
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    padding: 0.7rem;
+    display: flex;
+}
+
+.container-comment form input{
+    padding: 10px;
+    width: 90%;
+    background:transparent;
+    border: 1px solid lightgray;
+    color: white;
+    border-right: 0px;
+}
+
+.container-comment form button{
+    width: 10%;
+    background:transparent;
+    color: black;
     border: none;
-    background:rgba(0,0,0,0.5);
-}   
+    color: white;
+    font-weight: 800;
+    border: 1px solid white;
+    border-left: 0px;
+
+}
+
+.icon{
+    position: absolute;
+    color: white;
+    top: 0;
+    left: 47%;
+    cursor: pointer;
+}

@@ -1,14 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AiFillHeart, AiOutlineHeart, AiOutlineComment } from "react-icons/ai";
 import { IoMdShareAlt } from "react-icons/io";
 import {} from "react-icons/ai";
 import { AppContext } from "./context/context";
-const VerticalBar = () => {
-  const { show,heart, setHeart,count,setCount,setPanel } = useContext(AppContext);
-  const test = () => {
-    show.current.style.height = '100%'
-    console.log(show.current)
-  }
+const VerticalBar = ({ss}) => {
+  const[increase,setIncrease] = useState(false)
+  const [likes,setLikes] = useState(298);
   return (
     <>
       <div
@@ -28,21 +25,22 @@ const VerticalBar = () => {
       >
         <div className="likes" style={{display:'flex',flexDirection:'column',alignItems:'center',postion:'relative'}}>
 
-        {heart ? (
+        {increase ? (
             <AiFillHeart onClick={()=>{
-                setHeart(false)
-                setCount(count-1)
+                setIncrease(false)
+                setLikes(likes-1)
             }} style={{ cursor: "pointer", fontSize: "2rem",color:'red' }} />
             ):(
                 <AiOutlineHeart onClick={()=>{
-                    setHeart(true)
-                    setCount(count+1)
+                  setIncrease(true)
+                  setLikes(likes+1)
 
                 }} style={{ cursor: "pointer", fontSize: "2rem" }} />
                 )}
-        <p style={{position:'absolute',top:'35px'}}>{count}</p>
+        <p style={{position:'absolute',top:'35px'}}>{likes}</p>
                 </div>
-        <AiOutlineComment onClick={test} style={{ cursor: "pointer", fontSize: "2rem" }} />
+        <AiOutlineComment onClick={()=>ss(true)} style={{ cursor: "pointer", fontSize: "2rem" }} />
+          
         <IoMdShareAlt style={{ cursor: "pointer", fontSize: "2rem" }} />
       </div>
     </>
